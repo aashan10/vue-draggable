@@ -1,28 +1,37 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Sidebar>
+      <div class="col">
+        <div class="card">
+          <label>Rows</label>
+          <input v-model.number="rows" />
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <label>Cols</label>
+          <input v-model.number="columns" />
+        </div>
+      </div>
+    </Sidebar>
+    <Content :rows="rows" :columns="columns" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Sidebar from "./components/Sidebar";
+import Content from "./components/Content";
 export default {
-  name: 'App',
+  data: () => {
+    return { rows: 4, columns: 4 };
+  },
   components: {
-    HelloWorld
+    Sidebar,
+    Content
   }
-}
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import "./assets/main.css";
 </style>

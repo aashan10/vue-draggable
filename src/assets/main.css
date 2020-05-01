@@ -1,0 +1,194 @@
+#app{
+  display: flex;
+  background-color: aliceblue;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  flex-direction: row;
+  flex: 10;
+  font-family: Raleway, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#sidebar{
+  display: flex;
+  flex: 3;
+  flex-direction: column;
+  background-color: #58a258;
+  overflow-y: scroll;
+  padding: 10px;
+  justify-content: flex-start;
+}
+
+#content{
+  display: flex;
+  flex: 7;
+  background-color: #58a258;
+  overflow: scroll;
+}
+
+.row::-webkit-scrollbar, .col::-webkit-scrollbar, #content::-webkit-scrollbar, #sidebar::-webkit-scrollbar{
+  display:none;
+}
+
+*{
+  margin: 0; padding: 0;
+}
+
+.row {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.col{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow: scroll;
+}
+
+.card {
+  display: flex;
+  flex: 1;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  overflow:hidden;
+}
+
+.row>.col {
+  margin-left: 10px;
+}
+
+.row>.col:first-child{
+  margin-left: 0;
+}
+
+.entity{
+  height: 80px;
+  width: 80px !important;
+  flex: none;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 0;
+  /* background-color: transparent; */
+}
+
+
+#grid {
+  padding: 10px;
+  background-color: #9c5c0d;
+  margin: auto;
+  border-radius: 10px;
+  min-width: 100px;
+  min-height: 100px;
+  flex: none;
+}
+
+.grid-container{
+  overflow: scroll;
+  flex:11;
+}
+
+.container{
+  justify-content: space-between; 
+  flex: 12;
+  margin: 10px;
+}
+
+.grid-container::-webkit-scrollbar{
+  display: block;
+  width: 5px;
+}
+
+.cell {
+  height: 100px;
+  width: 100px;
+  background-color: #77480e;
+  border-radius: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.row>.cell {
+  margin-left: 10px;
+}
+
+#grid>.row{
+  margin-bottom: 10px;
+}
+
+
+
+#grid>.row:last-child{
+  margin-bottom: 0;
+}
+
+.row>.cell:first-child{
+  margin-left: 0;
+}
+
+input{
+  padding: 10px 20px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+input:focus{
+  outline: none;
+}
+
+label {
+  margin: auto;
+  flex: 1;
+  margin-right: 20px;
+}
+
+
+.entity-name {
+  font-size: 13px;
+  margin: auto;
+}
+
+.entity-image {
+  max-width: 100%;
+  max-height: 60px;
+  margin: 0 auto;
+  flex: 1;
+}
+
+.plant-container{
+  margin-bottom:0; 
+  flex-wrap: wrap; 
+  justify-content: flex-start; 
+  flex: none;
+  min-height: 120px;
+}
+
+.plant-container>.entity{
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.cell>.entity{
+  background-color: transparent;
+  color: white;
+}
+
+.btn {
+  padding: 10px 20px;
+  height: fit-content;
+  border: 1px;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background-color: #58a258;
+  color: white;
+  font-weight: 600;
+}
