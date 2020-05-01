@@ -7,7 +7,7 @@
       <div class="row">
         <h4>Plants</h4>
       </div>
-      <div class="row plant-container" @drop.prevent="drop" @dragover.prevent>
+      <div class="row plant-container">
         <Plant v-for="plant in entities" :entity="plant" :key="plant.id" />
       </div>
     </div>
@@ -25,32 +25,38 @@ export default {
         return [
           {
             id: 1,
+            no_of_item: 2,
             name: "Cauliflower",
             image: "/cauliflower.png"
           },
           {
             id: 2,
+            no_of_item: 2,
             name: "Lettuce",
             image: "/lettuce.png"
           },
           {
             id: 3,
+            no_of_item: 5,
             name: "Carrots",
             image: "/carrot.png"
           },
           {
             id: 4,
             name: "Strawberry",
+            no_of_item: 10,
             image: "/strawberry.png"
           },
           {
             id: 5,
             name: "Onion",
+            no_of_item: 12,
             image: "/onion.png"
           },
           {
             id: 6,
             name: "Garlic",
+            no_of_item: 15,
             image: "/garlic.png"
           }
         ];
@@ -60,13 +66,6 @@ export default {
   components: {
     Plant
   },
-  methods: {
-    drop: e => {
-      const target = e.target;
-      const entityId = e.dataTransfer.getData("entity");
-      const element = document.getElementById(entityId);
-      target.appendChild(element);
-    }
-  }
+  methods: {}
 };
 </script>
